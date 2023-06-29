@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "1db10adf-a3a7-4b6e-afc8-372b4a934823",
+		"name": "CollectionFONYOU",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CrearExamen",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombreExamen\":\"Matematicas\",\r\n    \"ciudad\":\"CDMX\",\r\n    \"zonaHoraria\":\"centro\",\r\n    \"fechaRealizacion\":\"2023-06-30 12:00:00\",\r\n    \"preguntas\":[\r\n        {\r\n            \"pregunta\":\"¿cuanto es 2 + 2?\",\r\n            \"opcionCorrecta\":1,\r\n            \"porcentaje\":20,\r\n            \"respuestas\":[\r\n                {\r\n                    \"numero\":1,\r\n                    \"respuesta\":\"4\"\r\n                },\r\n                {\r\n                    \"numero\":2,\r\n                    \"respuesta\":\"22\"\r\n                },\r\n                {\r\n                    \"numero\":3,\r\n                    \"respuesta\":\"6\"\r\n                },\r\n                {\r\n                    \"numero\":4,\r\n                    \"respuesta\":\"8\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"pregunta\":\"¿cuanto es 2 x 3?\",\r\n            \"opcionCorrecta\":4,\r\n            \"porcentaje\":40,\r\n            \"respuestas\":[\r\n                {\r\n                    \"numero\":1,\r\n                    \"respuesta\":\"2\"\r\n                },\r\n                {\r\n                    \"numero\":2,\r\n                    \"respuesta\":\"3\"\r\n                },\r\n                {\r\n                    \"numero\":3,\r\n                    \"respuesta\":\"23\"\r\n                },\r\n                {\r\n                    \"numero\":4,\r\n                    \"respuesta\":\"6\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"pregunta\":\"¿cuanto es 2 - 2?\",\r\n            \"opcionCorrecta\":2,\r\n            \"porcentaje\":30,\r\n            \"respuestas\":[\r\n                {\r\n                    \"numero\":1,\r\n                    \"respuesta\":\"4\"\r\n                },\r\n                {\r\n                    \"numero\":2,\r\n                    \"respuesta\":\"0\"\r\n                },\r\n                {\r\n                    \"numero\":3,\r\n                    \"respuesta\":\"6\"\r\n                },\r\n                {\r\n                    \"numero\":4,\r\n                    \"respuesta\":\"8\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"pregunta\":\"¿cuanto es 2 / 2?\",\r\n            \"opcionCorrecta\":3,\r\n            \"porcentaje\":10,\r\n            \"respuestas\":[\r\n                {\r\n                    \"numero\":1,\r\n                    \"respuesta\":\"4\"\r\n                },\r\n                {\r\n                    \"numero\":2,\r\n                    \"respuesta\":\"22\"\r\n                },\r\n                {\r\n                    \"numero\":3,\r\n                    \"respuesta\":\"1\"\r\n                },\r\n                {\r\n                    \"numero\":4,\r\n                    \"respuesta\":\"8\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/crearExamen",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"crearExamen"
+					]
+				},
+				"description": "Servicio para registrar un examen"
+			},
+			"response": []
+		},
+		{
+			"name": "ContestarExamen",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idExamen\":7,\r\n    \"idEstudiante\":2,\r\n    \"preguntas\":[\r\n        {\r\n            \"idPregunta\":1,\r\n            \"idRespuesta\":2\r\n        },\r\n        {\r\n            \"idPregunta\":2,\r\n            \"idRespuesta\":2\r\n        },\r\n        {\r\n            \"idPregunta\":3,\r\n            \"idRespuesta\":2\r\n        },\r\n        {\r\n            \"idPregunta\":4,\r\n            \"idRespuesta\":2\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/contestarExamen",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contestarExamen"
+					]
+				},
+				"description": "Servicio para enviar respuestas de un alumno con su examen"
+			},
+			"response": []
+		},
+		{
+			"name": "RegistrarEstudiante",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Carlos\",\r\n    \"edad\":18,\r\n    \"ciudad\":\"CDMX\",\r\n    \"zonaHoraria\":\"centro\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/registrarEstudiante",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"registrarEstudiante"
+					]
+				},
+				"description": "Servicio para registrar estudiante"
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarAsignacionExamenes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/buscarAsignacionExamenes?request=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"buscarAsignacionExamenes"
+					],
+					"query": [
+						{
+							"key": "request",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Servicio para validar que examenes tienes asignados"
+			},
+			"response": []
+		},
+		{
+			"name": "ConsultarRespuestas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/consultarRespuestas?request=7",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"consultarRespuestas"
+					],
+					"query": [
+						{
+							"key": "request",
+							"value": "7"
+						}
+					]
+				},
+				"description": "Servicio para consultar las respuestas del alumno por examen"
+			},
+			"response": []
+		},
+		{
+			"name": "ConsultarCalificacion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/consultarCalificacion?request=7",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"consultarCalificacion"
+					],
+					"query": [
+						{
+							"key": "request",
+							"value": "7"
+						}
+					]
+				},
+				"description": "Servicio para consultar la calificacion de un examen"
+			},
+			"response": []
+		}
+	]
+}
